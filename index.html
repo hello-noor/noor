@@ -68,7 +68,8 @@
 
   /* ---------- hero ---------- */
   .hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;min-height:calc(88dvh - 68px);padding-top:56px;padding-bottom:72px}
-  .kick{font-size:15px;color:var(--mute);margin-bottom:22px}
+  .kick{font-size:15px;color:var(--mute);margin-bottom:10px}
+  .kick2{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:22px}
   h1{font-size:clamp(2.4rem,4.3vw,3.9rem);line-height:1.03;letter-spacing:-.035em;font-weight:600;max-width:15ch}
   .lede{font-size:clamp(1.05rem,1.4vw,1.2rem);color:var(--mute);max-width:46ch;margin-top:26px}
   .hero-cta{display:flex;gap:22px;align-items:center;margin-top:36px;flex-wrap:wrap}
@@ -341,6 +342,7 @@
   .preset[aria-pressed="true"] .p-desc,.preset[aria-pressed="true"] .p-price{color:var(--mute)}
   .preset[aria-pressed="true"] .p-price strong{color:var(--blue)}
   .pre-or{font-size:14px;color:#BDB4AC;margin-top:14px}
+  .pre-or-tag{font-style:italic;font-weight:600;color:#D6CEC6;margin-right:6px}
   .btn.wa{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:10px}
   .btn.wa:hover{background:var(--ink);color:var(--stone)}
   .btn.wa svg,.pill svg{flex:none}
@@ -491,6 +493,7 @@
     <div class="wrap">
       <div>
         <p class="kick" lang="en">Boutique production studio, based in Umbria, available worldwide</p>
+        <p class="kick2">Foto, video e contenuti social per hotel, ristoranti e cantine</p>
         <h1>Raccontiamo chi fa ospitalità, vino e cibo.</h1>
         <p class="lede">Dalla ripresa con lo smartphone allo spot TV con una troupe di 25 persone. Da oltre dieci anni giriamo per hotel, ristoranti, cantine e produttori, in tutta Italia e, quando serve, nel resto del mondo.</p>
         <div class="hero-cta">
@@ -611,9 +614,9 @@
             <div class="pre-grid" id="presets">
               <button type="button" class="preset" data-p="essenziale"><span class="p-name">Essenziale</span><span class="p-desc">4 sessioni Professionali, un anno di foto e reel</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
               <button type="button" class="preset" data-p="racconto"><span class="p-name">Racconto</span><span class="p-desc">Le 4 sessioni, più i social gestiti da noi</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
-              <button type="button" class="preset hot" data-p="tutto"><span class="p-badge">La scelta completa</span><span class="p-name">Tutto incluso</span><span class="p-desc">Sessioni, social e libreria del girato</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
+              <button type="button" class="preset hot" data-p="tutto"><span class="p-badge">La scelta completa</span><span class="p-name">Completo</span><span class="p-desc">Sessioni, social e libreria del girato</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
             </div>
-            <p class="pre-or">Oppure componete la vostra, scelta per scelta.</p>
+            <p class="pre-or"><span class="pre-or-tag">À la carte</span> Componete la vostra, come al menù: una scelta per volta.</p>
           </div>
 
           <fieldset>
@@ -778,7 +781,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fmt = n => '€ ' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   const monthly = rata => Math.round(rata / 3);
-  const WA_NUMBER = ''; // numero WhatsApp NOOR in formato internazionale, senza + e spazi (es. 393331234567)
+  const WA_NUMBER = '393403310498';
   const waLink = text => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
   /* ---------- dati ---------- */
