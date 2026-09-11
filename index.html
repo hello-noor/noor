@@ -4,7 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NOOR · Contenuti foto e video per ospitalità, vino e cibo</title>
-<meta name="description" content="Studio di produzione foto e video a Bastia Umbra. Dalla ripresa con lo smartphone allo spot TV. Scopri quanto costa un anno di contenuti.">
+<meta name="description" content="Boutique production studio in Umbria. Contenuti foto e video per hotel, ristoranti e cantine, dalla ripresa con lo smartphone allo spot TV. Scoprite quanto costa un anno di contenuti.">
+<meta name="theme-color" content="#F3EDE7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NOOR">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://hello-noor.github.io/">
+<meta property="og:title" content="NOOR · Ogni stagione ha la sua luce">
+<meta property="og:description" content="Contenuti foto e video per ospitalità, vino e cibo. Dalla ripresa con lo smartphone allo spot TV: scoprite quanto costa un anno di contenuti.">
+<meta property="og:image" content="https://hello-noor.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Il set dello spot La Fiammante e il claim Ogni stagione ha la sua luce">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOOR · Ogni stagione ha la sua luce">
+<meta name="twitter:description" content="Contenuti foto e video per ospitalità, vino e cibo.">
+<meta name="twitter:image" content="https://hello-noor.github.io/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F1C1A'/%3E%3Cpath d='M18 46V18h5l18 19V18h5v28h-5L23 27v19z' fill='%23F3EDE7'/%3E%3Crect x='22' y='51' width='20' height='3' fill='%232D3F80'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&display=swap" rel="stylesheet">
@@ -307,6 +324,26 @@
   .result .btn{width:100%;justify-content:center;margin-top:24px;padding:16px 20px;font-size:16px}
   .fine{font-size:13.5px;color:var(--mute);margin-top:12px;text-align:center}
   .aside{margin-top:22px;font-size:14.5px;color:#D6CEC6}
+  .presets{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid #5E5750}
+  .pre-lab{font-size:15.5px;font-weight:500;color:#EDE6DF;margin-bottom:14px}
+  .pre-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .preset{position:relative;display:flex;flex-direction:column;gap:6px;text-align:left;font:inherit;cursor:pointer;padding:20px 18px 18px;border-radius:16px;border:1px solid #5E5750;background:#282420;color:var(--stone);
+    transition:border-color .25s,background .25s,transform .45s var(--spring)}
+  .preset:hover{border-color:#958C84}
+  .preset:active{transform:scale(.98)}
+  .preset.hot{border-color:#9FB0E6}
+  .p-badge{position:absolute;top:-10px;left:14px;font-size:11.5px;font-weight:600;background:#9FB0E6;color:var(--ink);padding:3px 9px;border-radius:999px}
+  .p-name{font-size:18px;font-weight:600;letter-spacing:-.01em}
+  .p-desc{font-size:13.5px;color:#CBC2BA;line-height:1.35}
+  .p-price{margin-top:auto;padding-top:10px;font-size:13.5px;color:#CBC2BA}
+  .p-price strong{font-size:22px;font-weight:600;color:var(--stone);letter-spacing:-.02em;margin-right:4px}
+  .preset[aria-pressed="true"]{background:var(--stone);color:var(--ink);border-color:var(--stone);transform:translateY(-3px)}
+  .preset[aria-pressed="true"] .p-desc,.preset[aria-pressed="true"] .p-price{color:var(--mute)}
+  .preset[aria-pressed="true"] .p-price strong{color:var(--blue)}
+  .pre-or{font-size:14px;color:#BDB4AC;margin-top:14px}
+  .btn.wa{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:10px}
+  .btn.wa:hover{background:var(--ink);color:var(--stone)}
+  .btn.wa svg,.pill svg{flex:none}
   .ptable{margin-top:22px;border:0!important}
   .ptable summary{font-size:15px;font-weight:500;color:var(--stone);padding:14px 0;border-top:1px solid #5E5750;border-bottom:1px solid #5E5750}
   .ptable summary .pm::before,.ptable summary .pm::after{background:var(--stone)}
@@ -384,6 +421,7 @@
     section{padding:80px 0}
     .work{grid-template-columns:1fr;gap:18px;padding:28px 0}
     .qc-row{grid-template-columns:1fr;gap:6px}
+    .pre-grid{grid-template-columns:1fr}
     .seg button{font-size:13.5px;padding:9px 4px}
     .result{padding:22px 18px 24px}
     .lc-top{flex-wrap:wrap}
@@ -563,11 +601,21 @@
     <div class="wrap">
       <div class="sec-head rv">
         <h2>Ogni stagione ha la sua luce.</h2>
-        <p>Un anno di contenuti si costruisce con due scelte: come girare e quanto spesso. Contratto annuale, pagamento in quattro rate trimestrali. Il prezzo si aggiorna mentre scegliete.</p>
+        <p>Un anno di contenuti si costruisce con due scelte: come girare e quanto spesso. Partite da una proposta o componete la vostra. Contratto annuale, prezzi al mese, fatturazione trimestrale.</p>
       </div>
 
       <div class="conf">
         <div>
+          <div class="presets">
+            <p class="pre-lab">Partite da una proposta</p>
+            <div class="pre-grid" id="presets">
+              <button type="button" class="preset" data-p="essenziale"><span class="p-name">Essenziale</span><span class="p-desc">4 sessioni Professionali, un anno di foto e reel</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
+              <button type="button" class="preset" data-p="racconto"><span class="p-name">Racconto</span><span class="p-desc">Le 4 sessioni, più i social gestiti da noi</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
+              <button type="button" class="preset hot" data-p="tutto"><span class="p-badge">La scelta completa</span><span class="p-name">Tutto incluso</span><span class="p-desc">Sessioni, social e libreria del girato</span><span class="p-price"><strong class="num"></strong> al mese</span></button>
+            </div>
+            <p class="pre-or">Oppure componete la vostra, scelta per scelta.</p>
+          </div>
+
           <fieldset>
             <legend>Come girare</legend>
             <div class="opts levels" id="levelOpts"></div>
@@ -582,12 +630,12 @@
           <label class="social" id="socialBox">
             <input type="checkbox" id="socialToggle">
             <span>
-              <span class="s-tag">La scelta completa</span>
+              <span class="s-tag">Pubblichiamo noi</span>
               <span class="s-title">Social inclusi</span>
               <span class="s-sub">Giriamo, scriviamo e pubblichiamo noi. Un solo interlocutore, dalla ripresa al post.</span>
             </span>
             <span class="switch" aria-hidden="true"></span>
-            <span class="s-amount"><strong class="num">+ € 500</strong><em>al mese, cioè + € 1.500 a trimestre</em></span>
+            <span class="s-amount"><strong class="num">+ € 500</strong><em>al mese, fatturati a trimestre</em></span>
             <span class="s-list"><span>Piano editoriale mensile</span><span>Circa 10 contenuti al mese su Instagram e Facebook</span><span>Post, Stories, Reel</span><span>Report trimestrale</span></span>
             <span class="why" id="socialWhy">Disponibile con livello Professionale o Cinema, da 3 sessioni l'anno.<button type="button" id="socialFix">Attiva i social</button></span>
           </label>
@@ -610,10 +658,10 @@
           <details class="ptable">
             <summary>Tutti i prezzi, a colpo d’occhio <span class="pm" aria-hidden="true"></span></summary>
             <div class="pt-wrap"><table class="num">
-              <thead><tr><th>Rata trimestrale</th><th>2 sessioni</th><th>3 sessioni</th><th>4 sessioni</th><th>6 sessioni</th></tr></thead>
+              <thead><tr><th>Al mese</th><th>2 sessioni</th><th>3 sessioni</th><th>4 sessioni</th><th>6 sessioni</th></tr></thead>
               <tbody id="ptBody"></tbody>
             </table>
-            <p>Contenuti, IVA esclusa. Social inclusi: + € 1.500 a trimestre, da Professionale e 3 sessioni. Libreria del girato: + 15% sui contenuti.</p></div>
+            <p>Solo contenuti, IVA esclusa, fatturazione trimestrale. Social inclusi: + € 500 al mese, da Professionale e 3 sessioni. Libreria del girato: + 15% sui contenuti.</p></div>
           </details>
         </div>
 
@@ -625,16 +673,17 @@
             <button type="button" class="qc-lib" id="qLib" role="switch" aria-checked="false"><span class="qs-txt"><b>Libreria del girato</b><span id="qLibSub">tutto il girato colorato, + 15% sui contenuti</span></span><span class="switch" aria-hidden="true"></span></button>
           </div>
           <div aria-live="polite">
-          <p class="r-label">Rata trimestrale</p>
-          <div class="price"><span class="big num" id="rata">€ 2.000</span><span class="per">a trimestre</span></div>
-          <p class="annual num" id="annual">€ 8.000 l'anno, IVA esclusa</p>
+          <p class="r-label">Prezzo al mese</p>
+          <div class="price"><span class="big num" id="rata">€ 667</span><span class="per">al mese</span></div>
+          <p class="annual num" id="annual">fatturati € 2.000 a trimestre, € 8.000 l’anno, IVA esclusa</p>
           <p class="annual num" id="split" style="margin-top:2px"></p>
           <div class="gets" id="gets"></div>
           <div class="nudge soc" id="nudgeSocial"></div>
           <div class="nudge" id="nudge"></div>
           </div>
           <a class="btn" id="askBtn" href="#">Chiedi questa proposta</a>
-          <p class="fine">Si apre una mail già compilata con la vostra scelta.</p>
+          <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.6 18.6z"/><path d="M9.3 8.6c.2 2.6 3.4 5.8 6 6l1-1.4-1.9-1-1 .8c-1-.4-2.1-1.5-2.5-2.5l.8-1-1-1.9z" fill="currentColor" stroke="none"/></svg>Scriveteci su WhatsApp</a>
+          <p class="fine">Mail o WhatsApp si aprono già compilati con la vostra scelta.</p>
         </aside>
       </div>
     </div>
@@ -700,6 +749,7 @@
       <a class="mail rv" href="mailto:hello@noor.studio">hello@noor.studio</a>
       <div class="links rv">
         <a class="pill" href="https://www.noor.studio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>noor.studio</a>
+        <a class="pill" id="waPill" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.6 18.6z"/><path d="M9.3 8.6c.2 2.6 3.4 5.8 6 6l1-1.4-1.9-1-1 .8c-1-.4-2.1-1.5-2.5-2.5l.8-1-1-1.9z" fill="currentColor" stroke="none"/></svg>WhatsApp</a>
         <a class="pill" href="https://www.instagram.com/mariusmele/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>@mariusmele</a>
       </div>
       <div class="foot">
@@ -719,7 +769,7 @@
 </dialog>
 
 <div class="mbar" id="mbar" aria-hidden="true">
-  <div><strong class="num" id="mRata">€ 2.000</strong><span id="mSub">a trimestre</span></div>
+  <div><strong class="num" id="mRata">€ 667</strong><span id="mSub">al mese</span></div>
   <a class="btn" href="#riepilogo">Riepilogo</a>
 </div>
 
@@ -727,6 +777,9 @@
 (() => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fmt = n => '€ ' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  const monthly = rata => Math.round(rata / 3);
+  const WA_NUMBER = ''; // numero WhatsApp NOOR in formato internazionale, senza + e spazi (es. 393331234567)
+  const waLink = text => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
   /* ---------- dati ---------- */
   const LEVELS = {
@@ -781,6 +834,11 @@
 
   /* ---------- configuratore ---------- */
   const state = { level:'pro', n:4, social:false, lib:false };
+  const PRESETS = {
+    essenziale: { level:'pro', n:4, social:false, lib:false },
+    racconto:   { level:'pro', n:4, social:true,  lib:false },
+    tutto:      { level:'pro', n:4, social:true,  lib:true }
+  };
   const levelOpts = document.getElementById('levelOpts');
   levelOpts.innerHTML = Object.entries(LEVELS).map(([k,l]) => `
     <label class="opt"><input type="radio" name="level" value="${k}" ${k===state.level?'checked':''}>
@@ -844,26 +902,34 @@
     tween(0, 1000, v => {
       const k = v/1000;
       const rr = Math.round(fromR + (r.rata - fromR)*k), aa = Math.round(fromA + (r.annual - fromA)*k);
-      rataEl.textContent = fmt(k===1 ? r.rata : Math.round(rr/5)*5);
-      document.getElementById('annual').textContent = fmt(k===1 ? r.annual : Math.round(aa/10)*10) + ' l’anno, IVA esclusa';
+      rataEl.textContent = fmt(k===1 ? monthly(r.rata) : monthly(rr));
+      document.getElementById('annual').textContent = `fatturati ${fmt(r.rata)} a trimestre, ${fmt(r.annual)} l’anno, IVA esclusa`;
     });
     shownRata = r.rata; shownAnnual = r.annual;
     const parts = [];
-    if (r.social) parts.push(`${fmt(SOCIAL_Q)} per i social`);
-    if (r.lib) parts.push(`${fmt(r.libAnnual/4)} per la libreria del girato`);
-    document.getElementById('split').textContent = parts.length ? `di cui, a trimestre, ${parts.join(' e ')}` : '';
-    ['libCard','qLib'].forEach(id => document.getElementById(id).setAttribute('aria-checked', r.lib));
+    if (r.social) parts.push(`${fmt(SOCIAL_Q/3)} per i social`);
+    if (r.lib) parts.push(`${fmt(r.libAnnual/12)} per la libreria del girato`);
+    document.getElementById('split').textContent = parts.length ? `di cui, al mese, ${parts.join(' e ')}` : '';
+    document.getElementById('presets').addEventListener('click', e => {
+    const b = e.target.closest('.preset'); if (!b) return;
+    Object.assign(state, PRESETS[b.dataset.p]);
+    levelOpts.querySelector(`input[value="${state.level}"]`).checked = true;
+    freqOpts.querySelector(`input[value="${state.n}"]`).checked = true;
+    render();
+    if (window.matchMedia('(max-width: 900px)').matches) document.getElementById('riepilogo').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+  });
+  ['libCard','qLib'].forEach(id => document.getElementById(id).setAttribute('aria-checked', r.lib));
     const libQ = Math.round(L_ANNUAL(state) * 0.15 / 20) * 20 / 4;
-    document.getElementById('libAmt').textContent = '+ ' + fmt(libQ);
-    document.getElementById('libAmtSub').textContent = 'a trimestre, il 15% dei contenuti';
-    document.getElementById('qLibSub').textContent = r.lib ? `tutto il girato colorato, + ${fmt(r.libAnnual/4)} a trimestre` : 'tutto il girato colorato, + 15% sui contenuti';
+    document.getElementById('libAmt').textContent = '+ ' + fmt(libQ/3);
+    document.getElementById('libAmtSub').textContent = 'al mese, il 15% dei contenuti';
+    document.getElementById('qLibSub').textContent = `decine di clip pronte, + ${fmt(libQ/3)} al mese`;
     document.querySelectorAll('#qLevel button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === state.level));
     document.querySelectorAll('#qFreq button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.v === state.n));
     const qs = document.getElementById('qSocial');
     qs.setAttribute('aria-checked', r.social); qs.classList.toggle('locked', !r.socialOk);
-    document.getElementById('qSocialSub').textContent = r.socialOk ? `circa 10 contenuti al mese, + ${fmt(SOCIAL_Q)} a trimestre` : 'da Professionale e 3 sessioni: tocca per attivarli';
-    document.getElementById('mRata').textContent = fmt(r.rata);
-    document.getElementById('mSub').textContent = `a trimestre, ${LEVELS[state.level].name}, ${FREQ.find(x => x.n === state.n).name.toLowerCase()}${r.social ? ', social inclusi' : ''}${r.lib ? ', libreria del girato' : ''}`;
+    document.getElementById('qSocialSub').textContent = r.socialOk ? `circa 10 contenuti al mese, + ${fmt(SOCIAL_Q/3)} al mese` : 'da Professionale e 3 sessioni: tocca per attivarli';
+    document.getElementById('mRata').textContent = fmt(monthly(r.rata));
+    document.getElementById('mSub').textContent = `al mese, ${LEVELS[state.level].name}, ${FREQ.find(x => x.n === state.n).name.toLowerCase()}${r.social ? ', social inclusi' : ''}${r.lib ? ', libreria del girato' : ''}`;
 
     // prezzo su ogni opzione
     const tag = c => `${fmt(c.rata)}<i>a trimestre${state.social && !c.social ? ', senza social' : ''}</i>`;
@@ -890,7 +956,7 @@
     requestAnimationFrame(() => monthNodes.forEach((m,i) => m.classList.toggle('on', ms.includes(i))));
     lastN = state.n;
     // tabella prezzi
-    document.getElementById('ptBody').innerHTML = Object.entries(LEVELS).map(([k,l]) => `<tr><td>${l.name}</td>${[2,3,4,6].map(n => `<td class="${k===state.level && n===state.n ? 'cur' : ''}">${fmt(l.price[n]*n/4)}</td>`).join('')}</tr>`).join('');
+    document.getElementById('ptBody').innerHTML = Object.entries(LEVELS).map(([k,l]) => `<tr><td>${l.name}</td>${[2,3,4,6].map(n => `<td class="${k===state.level && n===state.n ? 'cur' : ''}">${fmt(Math.round(l.price[n]*n/12))}</td>`).join('')}</tr>`).join('');
 
     const gets = [
       [r.foto, 'foto editate nell’anno'],
@@ -908,7 +974,7 @@
       const nextR = calc({...state, n: next.n});
       const delta = nextR.rata - r.rata;
       const plus = next.n >= 4 && state.level !== 'cinema' ? ' e il drone incluso' : '';
-      nudge.innerHTML = `Con ${next.name.toLowerCase()} avete una sessione in più${plus}, per ${fmt(delta)} in più a trimestre.<br><button type="button" data-n="${next.n}">Passa a ${next.name.toLowerCase()}</button>`;
+      nudge.innerHTML = `Con ${next.name.toLowerCase()} avete una sessione in più${plus}, per ${fmt(delta/3)} in più al mese.<br><button type="button" data-n="${next.n}">Passa a ${next.name.toLowerCase()}</button>`;
       nudge.classList.remove('show'); void nudge.offsetWidth; nudge.classList.add('show');
     } else nudge.classList.remove('show');
 
@@ -922,12 +988,18 @@
       `- Social inclusi: ${r.social ? 'sì' : 'no'}`,
       `- Libreria del girato: ${r.lib ? 'sì' : 'no'}`,
       `- Mesi indicativi delle sessioni: ${currentMonths().map(i => MONTHS[i]).join(', ')}`,
-      `Rata indicativa: ${fmt(r.rata)} a trimestre (${fmt(r.annual)} l'anno, IVA esclusa).`,
+      `Prezzo indicativo: ${fmt(monthly(r.rata))} al mese, fatturati ${fmt(r.rata)} a trimestre (${fmt(r.annual)} l'anno, IVA esclusa).`,
       '',
       'Struttura:',
       'Località:',
       'Referente e telefono:'
     ];
+    document.getElementById('waBtn').href = waLink(['Buongiorno NOOR,', 'vorrei ricevere una proposta per:', `${LEVELS[state.level].name}, ${state.n} sessioni l'anno${r.social ? ', social inclusi' : ''}${r.lib ? ', libreria del girato' : ''}.`, `Prezzo indicativo: ${fmt(monthly(r.rata))} al mese.`].join('\n'));
+    document.querySelectorAll('.preset').forEach(b => {
+      const P = PRESETS[b.dataset.p];
+      b.querySelector('.p-price strong').textContent = fmt(monthly(calc(P).rata));
+      b.setAttribute('aria-pressed', P.level === state.level && P.n === state.n && P.social === r.social && P.lib === r.lib);
+    });
     document.getElementById('askBtn').href = 'mailto:hello@noor.studio?subject=' +
       encodeURIComponent(`Proposta contenuti: ${LEVELS[state.level].name}, ${f.name}`) + '&body=' + encodeURIComponent(lines.join('\n'));
   }
@@ -984,6 +1056,7 @@
     }, {threshold:.5}).observe(sicNum);
   }
 
+  document.getElementById('waPill').href = waLink('Buongiorno NOOR, vorrei informazioni sui vostri contenuti foto e video.');
   /* ---------- nav + reveal ---------- */
   const nav = document.querySelector('header.nav');
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
