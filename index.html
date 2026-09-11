@@ -9,6 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NOOR">
 <meta property="og:locale" content="it_IT">
+<meta property="fb:app_id" content="966242223397117">
 <meta property="og:url" content="https://hello-noor.github.io/noor/">
 <meta property="og:title" content="NOOR · Foto e video per i social">
 <meta property="og:description" content="Contenuti foto e video per ospitalità, vino e cibo. Dalla ripresa con lo smartphone allo spot TV: scoprite quanto costa un anno di contenuti.">
@@ -656,7 +657,7 @@
             <span class="switch" aria-hidden="true"></span>
             <span class="s-amount"><em class="s-from">a partire da</em><strong class="num">+ € 500</strong><em>al mese, fatturati a trimestre</em></span>
             <span class="s-list"><span>Piano editoriale mensile</span><span>Circa 10 contenuti al mese su Instagram e Facebook</span><span>Post, Stories, Reel</span><span>Report trimestrale</span></span>
-            <span class="why" id="socialWhy">Disponibile con livello Professionale o Cinema, da 3 sessioni l'anno.<button type="button" id="socialFix">Attiva i social</button></span>
+            
           </label>
 
           <button type="button" class="libcard" id="libCard" role="switch" aria-checked="false">
@@ -897,7 +898,7 @@
   const L_ANNUAL = s => LEVELS[s.level].price[s.n] * s.n;
   function calc(s){
     const L = LEVELS[s.level];
-    const socialOk = s.level !== 'agile' && s.n >= 3;
+    const socialOk = true;
     const social = s.social && socialOk;
     const annualContent = L.price[s.n] * s.n;
     const libAnnual = s.lib ? Math.round(annualContent * 0.15 / 20) * 20 : 0;
@@ -951,7 +952,7 @@
     document.querySelectorAll('#qFreq button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.v === state.n));
     const qs = document.getElementById('qSocial');
     qs.setAttribute('aria-checked', r.social); qs.classList.toggle('locked', !r.socialOk);
-    document.getElementById('qSocialSub').textContent = r.socialOk ? `circa 10 contenuti al mese, + ${fmt(SOCIAL_Q/3)} al mese` : 'da Professionale e 3 sessioni: tocca per attivarli';
+    document.getElementById('qSocialSub').textContent = `circa 10 contenuti al mese, + ${fmt(SOCIAL_Q/3)} al mese`;
     document.getElementById('mRata').textContent = fmt(info.big);
     document.getElementById('mSub').textContent = `${info.unit}, ${LEVELS[state.level].name}, ${FREQ.find(x => x.n === state.n).name.toLowerCase()}${r.social ? ', social inclusi' : ''}${r.lib ? ', libreria del girato' : ''}`;
 
@@ -1030,11 +1031,7 @@
   levelOpts.addEventListener('change', e => { state.level = e.target.value; render(); });
   freqOpts.addEventListener('change', e => { state.n = +e.target.value; render(); });
   socialToggle.addEventListener('change', () => { state.social = socialToggle.checked; render(); });
-  const enableSocial = () => {
-    if (state.level === 'agile'){ state.level = 'pro'; levelOpts.querySelector('input[value="pro"]').checked = true; }
-    if (state.n < 3){ state.n = 3; freqOpts.querySelector('input[value="3"]').checked = true; }
-    state.social = true; render();
-  };
+  const enableSocial = () => { state.social = true; render(); };
   document.getElementById('qLevel').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.level = b.dataset.v; levelOpts.querySelector(`input[value="${state.level}"]`).checked = true; render(); });
   document.getElementById('qPay').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.pay = b.dataset.v; render(); });
   document.getElementById('presets').addEventListener('click', e => {
@@ -1048,7 +1045,6 @@
   document.getElementById('qFreq').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.n = +b.dataset.v; freqOpts.querySelector(`input[value="${state.n}"]`).checked = true; render(); });
   ['libCard','qLib'].forEach(id => document.getElementById(id).addEventListener('click', () => { state.lib = !state.lib; render(); }));
   document.getElementById('qSocial').addEventListener('click', () => { const r = calc(state); if (!r.socialOk) enableSocial(); else { state.social = !state.social; render(); } });
-  document.getElementById('socialFix').addEventListener('click', e => { e.preventDefault(); enableSocial(); });
   document.getElementById('nudgeSocial').addEventListener('click', e => { if (e.target.closest('button[data-social]')) enableSocial(); });
   document.getElementById('nudge').addEventListener('click', e => {
     const b = e.target.closest('button[data-n]'); if (!b) return;
