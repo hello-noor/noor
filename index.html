@@ -712,6 +712,7 @@
         <details><summary>Perché un anno intero, e non un servizio singolo? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Perché ci piace entrare in sintonia con chi seguiamo, e le relazioni migliori sono quelle che funzionano nel tempo. Stagione dopo stagione capiamo meglio i vostri desideri, a volte prima che ce li chiediate, e ogni sessione parte da quello che ha funzionato nella precedente.</p></div></details>
         <details><summary>Cosa comprende l’opzione social? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Copre un solo profilo: un account Instagram e la pagina Facebook collegata. Altri canali, profili aggiuntivi o lingue diverse si aggiungono con un canone su misura; per questo il prezzo è indicato «a partire da».</p></div></details>
         <details><summary>Perché il prezzo cambia in base al pagamento? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Il pagamento trimestrale è il nostro riferimento. Il mensile costa il 5% in più perché comporta più fatture e più lavoro amministrativo, a parità di contenuti consegnati. L’unica soluzione annuale, anticipata, costa il 5% in meno: ci permette di pianificare meglio l’anno di lavoro e riduce il rischio di mancati pagamenti, un risparmio che giriamo a chi paga in anticipo.</p></div></details>
+        <details><summary>I prezzi del calcolatore sono definitivi? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Sono sempre IVA esclusa, e sono pensati per darvi un’idea chiara mentre confrontate le opzioni: non sono un preventivo vincolante. Il prezzo definitivo viene confermato per iscritto, nel preventivo o nel contratto, dopo aver verificato insieme i dettagli del vostro progetto. In caso di differenza tra quanto mostrato su questa pagina, anche per un eventuale errore tecnico, e il contratto firmato, fa fede solo quest’ultimo.</p></div></details>
         <details id="faq-food-stylist"><summary>Perché consigliate un food stylist? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Un food stylist prepara il piatto per la camera, non per la sala: gestisce vapore, gocce, colore e consistenza, cose che cambiano in pochi secondi e che un cameriere non ha motivo di curare. La differenza si vede, soprattutto nel primo shooting con un nuovo ristorante, quando dobbiamo ancora capire insieme come rendere al meglio ogni piatto del menù. Una volta fissato lo stile, spesso nelle sessioni successive basta il nostro operatore, che ormai lo conosce. È un extra, con budget a parte: lo proponiamo quando il soggetto lo richiede, non lo includiamo di default.</p></div></details>
         <details><summary>Lavorate solo in Umbria? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>No. La base è in Umbria, ma lavoriamo in tutta Italia e, quando serve, all’estero.</p></div></details>
       </div>
@@ -797,11 +798,11 @@
   function payInfo(annual, pay){
     if (pay === 'month'){
       const tot = annual * 1.05;
-      return { big: tot/12, unit:'al mese', sub: `fatturazione mensile: ${fmt(tot)} l’anno, il 5% in più rispetto al trimestrale`, mail: `${fmt(tot/12)} al mese (fatturazione mensile, +5%)` };
+      return { big: tot/12, unit:'al mese', sub: `fatturazione mensile: ${fmt(tot)} l’anno, IVA esclusa`, mail: `${fmt(tot/12)} al mese (fatturazione mensile)` };
     }
     if (pay === 'year'){
       const tot = annual * 0.95;
-      return { big: tot, unit:'pagamento unico', sub: `un’unica fattura annuale, invece di ${fmt(annual)}: il 5% in meno rispetto al trimestrale`, mail: `${fmt(tot)} in un’unica soluzione annuale (−5%)` };
+      return { big: tot, unit:'pagamento unico', sub: `un’unica fattura annuale, invece di ${fmt(annual)}: il 5% in meno rispetto al trimestrale, IVA esclusa`, mail: `${fmt(tot)} in un’unica soluzione annuale (−5%)` };
     }
     return { big: annual/12, unit:'al mese', sub: `fatturati ${fmt(annual/4)} a trimestre, ${fmt(annual)} l’anno, IVA esclusa`, mail: `${fmt(annual/12)} al mese, fatturazione trimestrale` };
   }
@@ -941,15 +942,6 @@
     if (r.social) parts.push(`${fmt(SOCIAL_Q/3)} per i social`);
     if (r.lib) parts.push(`${fmt(r.libAnnual/12)} per la libreria del girato`);
     document.getElementById('split').textContent = parts.length ? `di cui, al mese, ${parts.join(' e ')}` : '';
-    document.getElementById('presets').addEventListener('click', e => {
-    const b = e.target.closest('.preset'); if (!b) return;
-    Object.assign(state, PRESETS[b.dataset.p]);
-    levelOpts.querySelector(`input[value="${state.level}"]`).checked = true;
-    freqOpts.querySelector(`input[value="${state.n}"]`).checked = true;
-    render();
-    if (window.matchMedia('(max-width: 900px)').matches) document.getElementById('riepilogo').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
-  });
-  document.getElementById('qPay').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.pay = b.dataset.v; render(); });
   ['libCard','qLib'].forEach(id => document.getElementById(id).setAttribute('aria-checked', r.lib));
     const libQ = Math.round(L_ANNUAL(state) * 0.15 / 20) * 20 / 4;
     document.getElementById('libAmt').textContent = '+ ' + fmt(libQ/3);
@@ -1044,6 +1036,15 @@
     state.social = true; render();
   };
   document.getElementById('qLevel').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.level = b.dataset.v; levelOpts.querySelector(`input[value="${state.level}"]`).checked = true; render(); });
+  document.getElementById('qPay').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.pay = b.dataset.v; render(); });
+  document.getElementById('presets').addEventListener('click', e => {
+    const b = e.target.closest('.preset'); if (!b) return;
+    Object.assign(state, PRESETS[b.dataset.p]);
+    levelOpts.querySelector(`input[value="${state.level}"]`).checked = true;
+    freqOpts.querySelector(`input[value="${state.n}"]`).checked = true;
+    render();
+    if (window.matchMedia('(max-width: 900px)').matches) document.getElementById('riepilogo').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+  });
   document.getElementById('qFreq').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.n = +b.dataset.v; freqOpts.querySelector(`input[value="${state.n}"]`).checked = true; render(); });
   ['libCard','qLib'].forEach(id => document.getElementById(id).addEventListener('click', () => { state.lib = !state.lib; render(); }));
   document.getElementById('qSocial').addEventListener('click', () => { const r = calc(state); if (!r.socialOk) enableSocial(); else { state.social = !state.social; render(); } });
