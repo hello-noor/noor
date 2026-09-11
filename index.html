@@ -357,19 +357,12 @@
   .ac-head{margin:6px 0 28px;padding-top:30px;border-top:1px solid #5E5750}
   .ac-lab{font-family:"Georgia",serif;font-style:italic;font-size:clamp(1.5rem,2.4vw,1.9rem);font-weight:700;color:var(--stone);letter-spacing:-.01em}
   .ac-sub{font-size:14.5px;color:#BDB4AC;margin-top:8px}
+  .inline-link{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;text-decoration-thickness:1px}
+  .inline-link:hover{color:var(--blue);text-decoration-style:solid}
+  .extras a.inline-link{white-space:nowrap}
   .btn.wa{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:10px}
   .btn.wa:hover{background:var(--ink);color:var(--stone)}
   .btn.wa svg,.pill svg{flex:none}
-  .ptable{margin-top:22px;border:0!important}
-  .ptable summary{font-size:15px;font-weight:500;color:var(--stone);padding:14px 0;border-top:1px solid #5E5750;border-bottom:1px solid #5E5750}
-  .ptable summary .pm::before,.ptable summary .pm::after{background:var(--stone)}
-  .pt-wrap{padding:16px 0 4px;overflow-x:auto}
-  .ptable table{width:100%;border-collapse:collapse;font-size:14.5px;color:#EDE6DF}
-  .ptable th{font-weight:500;color:#BDB4AC;text-align:right;padding:8px 10px;border-bottom:1px solid #5E5750;font-size:13px}
-  .ptable th:first-child,.ptable td:first-child{text-align:left}
-  .ptable td{text-align:right;padding:10px;border-bottom:1px solid #3F3A35}
-  .ptable td.cur{color:var(--ink);background:var(--stone);border-radius:6px;font-weight:600}
-  .pt-wrap p{font-size:13px;color:#BDB4AC;margin-top:12px}
   .aside a{color:var(--stone)}
 
   /* ---------- perché ---------- */
@@ -680,15 +673,7 @@
             <p class="year-hint">Le date le scegliete voi: toccate una sessione e poi il mese in cui la volete, oppure toccate direttamente un mese libero.</p>
           </div>
 
-          <p class="aside">Servono food stylist, scenografi, attori? Siamo una produzione completa: possiamo gestire tutto quello che serve, con un budget extra dedicato. Per livelli combinati o produzioni su progetto come spot e documentari, <a href="#contatti">scriveteci</a>.</p>
-          <details class="ptable">
-            <summary>Tutti i prezzi, a colpo d’occhio <span class="pm" aria-hidden="true"></span></summary>
-            <div class="pt-wrap"><table class="num">
-              <thead><tr><th>Al mese</th><th>2 sessioni</th><th>3 sessioni</th><th>4 sessioni</th><th>6 sessioni</th></tr></thead>
-              <tbody id="ptBody"></tbody>
-            </table>
-            <p>Solo contenuti, IVA esclusa, con pagamento trimestrale (il riferimento). Social inclusi: + € 500 al mese, da Professionale e 3 sessioni. Libreria del girato: + 15% sui contenuti.</p></div>
-          </details>
+          <p class="aside">Servono <a href="#faq-food-stylist" class="inline-link">food stylist</a>, scenografi, attori? Siamo una produzione completa: possiamo gestire tutto quello che serve, con un budget extra dedicato. Per livelli combinati o produzioni su progetto come spot e documentari, <a href="#contatti">scriveteci</a>.</p>
         </div>
 
         <aside class="result" id="riepilogo">
@@ -727,6 +712,7 @@
         <details><summary>Perché un anno intero, e non un servizio singolo? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Perché ci piace entrare in sintonia con chi seguiamo, e le relazioni migliori sono quelle che funzionano nel tempo. Stagione dopo stagione capiamo meglio i vostri desideri, a volte prima che ce li chiediate, e ogni sessione parte da quello che ha funzionato nella precedente.</p></div></details>
         <details><summary>Cosa comprende l’opzione social? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Copre un solo profilo: un account Instagram e la pagina Facebook collegata. Altri canali, profili aggiuntivi o lingue diverse si aggiungono con un canone su misura; per questo il prezzo è indicato «a partire da».</p></div></details>
         <details><summary>Perché il prezzo cambia in base al pagamento? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Il pagamento trimestrale è il nostro riferimento. Il mensile costa il 5% in più perché comporta più fatture e più lavoro amministrativo, a parità di contenuti consegnati. L’unica soluzione annuale, anticipata, costa il 5% in meno: ci permette di pianificare meglio l’anno di lavoro e riduce il rischio di mancati pagamenti, un risparmio che giriamo a chi paga in anticipo.</p></div></details>
+        <details id="faq-food-stylist"><summary>Perché consigliate un food stylist? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>Un food stylist prepara il piatto per la camera, non per la sala: gestisce vapore, gocce, colore e consistenza, cose che cambiano in pochi secondi e che un cameriere non ha motivo di curare. La differenza si vede, soprattutto nel primo shooting con un nuovo ristorante, quando dobbiamo ancora capire insieme come rendere al meglio ogni piatto del menù. Una volta fissato lo stile, spesso nelle sessioni successive basta il nostro operatore, che ormai lo conosce. È un extra, con budget a parte: lo proponiamo quando il soggetto lo richiede, non lo includiamo di default.</p></div></details>
         <details><summary>Lavorate solo in Umbria? <span class="pm" aria-hidden="true"></span></summary><div class="d-body"><p>No. La base è in Umbria, ma lavoriamo in tutta Italia e, quando serve, all’estero.</p></div></details>
       </div>
     </div>
@@ -754,7 +740,7 @@
           <div>Drone, dove non incluso <b>da € 300</b></div>
           <div>Consegna urgente in 72 ore <b>+ 25%</b></div>
           <div>Libreria del girato (decine di clip colorate, pronte all’uso) <b>+ 15%</b></div>
-          <div>Food stylist, scenografia, attori e ogni figura necessaria <b>budget extra</b></div>
+          <div><a href="#faq-food-stylist" class="inline-link">Food stylist</a>, scenografia, attori e ogni figura necessaria <b>budget extra</b></div>
         </div>
       </details>
       <details>
@@ -1002,7 +988,6 @@
     requestAnimationFrame(() => monthNodes.forEach((m,i) => m.classList.toggle('on', ms.includes(i))));
     lastN = state.n;
     // tabella prezzi
-    document.getElementById('ptBody').innerHTML = Object.entries(LEVELS).map(([k,l]) => `<tr><td>${l.name}</td>${[2,3,4,6].map(n => `<td class="${k===state.level && n===state.n ? 'cur' : ''}">${fmt(Math.round(l.price[n]*n/12))}</td>`).join('')}</tr>`).join('');
 
     const gets = [
       [r.foto, 'foto editate nell’anno'],
@@ -1103,6 +1088,15 @@
   }
 
   document.getElementById('waPill').href = waLink('Buongiorno NOOR, vorrei informazioni sui vostri contenuti foto e video.');
+  /* ---------- link interni verso una FAQ ---------- */
+  document.querySelectorAll('a[href^="#faq-"]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    target.setAttribute('open', '');
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+  }));
+
   /* ---------- nav + reveal ---------- */
   const nav = document.querySelector('header.nav');
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
