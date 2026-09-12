@@ -117,6 +117,11 @@
   .crew-count{font-size:clamp(3rem,6vw,5rem);font-weight:600;letter-spacing:-.04em;line-height:1;margin-bottom:16px}
   .crew-count small{font-size:18px;font-weight:500;letter-spacing:0;color:var(--mute);margin-left:10px}
   .motto{margin-top:48px;font-size:20px;font-weight:500;color:var(--blue)}
+  .scale-note{margin-top:64px;padding-top:40px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+  .sn-item{padding-top:22px;border-top:2px solid var(--ink)}
+  .sn-num{display:block;font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.04em;margin-bottom:10px}
+  .sn-item h3{font-family:Georgia,serif;font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px;line-height:1.2}
+  .sn-item p{font-size:15.5px;line-height:1.6;color:var(--mute)}
 
   /* ---------- lavori ---------- */
   .works{border-top:1px solid var(--line)}
@@ -348,6 +353,13 @@
   .p-badge{position:absolute;top:-11px;left:14px;font-size:11.5px;font-weight:600;background:#9FB0E6;color:#1B2144;padding:3px 10px;border-radius:999px}
   .p-name{font-size:19px;font-weight:600;letter-spacing:-.01em;padding-right:26px}
   .p-tag{display:inline-block;align-self:flex-start;white-space:nowrap;font-size:11.5px;font-weight:600;color:#1B2144;background:#9FB0E6;padding:3px 9px;border-radius:999px;margin:2px 0 2px}
+  .social-mgmt{background:var(--blue);color:var(--stone);padding:104px 0}
+  .sm-wrap{max-width:860px}
+  .sm-kick{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C9D0EA;margin-bottom:18px}
+  .social-mgmt h2{color:var(--stone);margin-bottom:24px}
+  .sm-body{font-size:19px;line-height:1.65;color:#E4E6F0;max-width:64ch}
+  .st-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .st-tags .p-tag{font-size:13px;padding:6px 14px}
   .p-desc{font-size:13.5px;color:#CBC2BA;line-height:1.35}
   .p-price{margin-top:auto;padding-top:12px;font-size:13.5px;color:#CBC2BA}
   .p-price strong{font-size:24px;font-weight:600;color:var(--stone);letter-spacing:-.02em;margin-right:4px}
@@ -444,6 +456,8 @@
     .backstage .strip{height:200px}
     .sic-grid{grid-template-columns:1fr;gap:28px}
     .sicily{padding:80px 0}
+    .social-mgmt{padding:72px 0}
+    .sm-body{font-size:17px}
     .lb-prev,.lb-next{top:auto;bottom:24px;margin-top:0}
     .opts.levels{grid-template-columns:1fr}
     .opts.freq{grid-template-columns:repeat(2,1fr)}
@@ -464,6 +478,9 @@
     .scale-detail{gap:18px 20px}
     .scale-detail dd{font-size:16px}
     .motto{margin-top:28px}
+    .scale-note{grid-template-columns:1fr;gap:32px;margin-top:44px;padding-top:32px}
+    .sn-item h3{font-size:19px}
+    .sn-item p{font-size:15.5px}
     .months{gap:2px}
     .m .slot{height:44px;border-radius:8px}
     .m .dot{width:16px;height:16px}
@@ -609,6 +626,33 @@
           <p class="motto">Lo stesso sguardo, a scale diverse.</p>
         </div>
       </div>
+      <div class="scale-note rv">
+        <div class="sn-item">
+          <span class="sn-num">01</span>
+          <h3>Più mani, altri strumenti</h3>
+          <p>Una squadra più grande permette di usare strumenti che da soli non reggerebbero: una luce tenuta esattamente dove serve, un’illuminazione a specchi, un dettaglio curato mentre il resto del set va avanti.</p>
+        </div>
+        <div class="sn-item">
+          <span class="sn-num">02</span>
+          <h3>Chi dirige, dirige</h3>
+          <p>Libera chi è dietro la macchina dal montare e smontare l’attrezzatura, per concentrarsi sulla ricerca dell’immagine. Si lavora meglio, più in fretta: il cinema torna a essere uno sport di squadra.</p>
+        </div>
+        <div class="sn-item">
+          <span class="sn-num">03</span>
+          <h3>Qualità non è solo squadra</h3>
+          <p>Conta anche l’attrezzatura che scegliamo e la ricerca che portiamo avanti ogni giorno. Quando serve qualcosa che non abbiamo, lo troviamo comunque, grazie alla rete di rental e professionisti in tutta Italia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GESTIONE SOCIAL -->
+  <section class="social-mgmt" id="social-team">
+    <div class="wrap sm-wrap">
+      <p class="sm-kick rv">Gestione Social</p>
+      <h2 class="rv">Un solo team, dal set al feed.</h2>
+      <p class="sm-body rv">Chi gira i contenuti è lo stesso team che li pubblica: lavoriamo insieme da anni, ci conosciamo bene, ci integriamo senza attriti. Per voi significa un solo interlocutore — non un’agenzia di produzione più un’agenzia social da tenere allineate — quindi meno call, meno tempo perso a spiegare due volte la stessa cosa. Il resto lo facciamo noi: piano editoriale, pubblicazione su Instagram e Facebook.</p>
+      <div class="st-tags rv"><span class="p-tag">Hotel</span><span class="p-tag">Spa</span><span class="p-tag">Ristoranti</span><span class="p-tag">Cantine</span><span class="p-tag">Vino</span><span class="p-tag">Olio</span></div>
     </div>
   </section>
 
