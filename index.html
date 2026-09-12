@@ -741,7 +741,7 @@
           <div>10 foto aggiuntive <b>€ 150</b></div>
           <div>Drone, dove non incluso <b>da € 300</b></div>
           <div>Consegna urgente in 72 ore <b>+ 25%</b></div>
-          <div>Libreria del girato (decine di clip colorate, pronte all’uso) <b>+ 15%</b></div>
+          <div>Libreria del girato (decine di clip colorate, pronte all’uso) <b>+ 15–20%</b></div>
           <div><a href="#faq-food-stylist" class="inline-link">Food stylist</a>, scenografia, attori e ogni figura necessaria <b>budget extra</b></div>
         </div>
       </details>
@@ -752,7 +752,7 @@
           <li>Calendario delle sessioni concordato alla firma. Spostamenti con almeno 7 giorni di preavviso; in caso di maltempo si riprogramma senza costi.</li>
           <li>Trasferta inclusa entro 100 km da Bastia Umbra. Oltre, rimborso forfettario per le spese di viaggio, quantificato in preventivo in base alla distanza; vitto e alloggio a carico della struttura se serve pernottare.</li>
           <li>Più contenuti social, altri canali o testi in altre lingue: canone su misura. Campagne a pagamento su preventivo.</li>
-          <li>Libreria del girato: + 15% sul prezzo dei contenuti. Il girato consegnato segue la stessa licenza d’uso dei contenuti; NOOR non risponde dei montaggi realizzati da terzi.</li>
+          <li>Libreria del girato: + 15% sul prezzo dei contenuti; + 20% su Agile e su Due Stagioni (2 sessioni l’anno) con Professionale o Cinema, dove il lavoro di selezione e colore pesa di più in proporzione. Il girato consegnato segue la stessa licenza d’uso dei contenuti; NOOR non risponde dei montaggi realizzati da terzi.</li>
           <li>Prezzi IVA esclusa. Si applicano le <a href="https://www.noor.studio/condizioni-generali/" target="_blank" rel="noopener">Condizioni generali NOOR</a>.</li>
         </ul></div>
       </details>
@@ -896,12 +896,13 @@
   let shownBig = 667, raf;
 
   const L_ANNUAL = s => LEVELS[s.level].price[s.n] * s.n;
+  const libRate = (level, n) => (level === 'agile' || n === 2) ? 0.20 : 0.15;
   function calc(s){
     const L = LEVELS[s.level];
     const socialOk = true;
     const social = s.social && socialOk;
     const annualContent = L.price[s.n] * s.n;
-    const libAnnual = s.lib ? Math.round(annualContent * 0.15 / 20) * 20 : 0;
+    const libAnnual = s.lib ? Math.round(annualContent * libRate(s.level, s.n) / 20) * 20 : 0;
     const annual = annualContent + libAnnual + (social ? SOCIAL_Q*4 : 0);
     return { L, socialOk, social, lib: !!s.lib, libAnnual, annual, rata: annual/4,
       foto: L.foto*s.n, reel: L.reel*s.n, video: L.video*s.n, drone: s.level==='cinema' || s.n>=4 };
@@ -944,9 +945,9 @@
     if (r.lib) parts.push(`${fmt(r.libAnnual/12)} per la libreria del girato`);
     document.getElementById('split').textContent = parts.length ? `di cui, al mese, ${parts.join(' e ')}` : '';
   ['libCard','qLib'].forEach(id => document.getElementById(id).setAttribute('aria-checked', r.lib));
-    const libQ = Math.round(L_ANNUAL(state) * 0.15 / 20) * 20 / 4;
+    const libQ = Math.round(L_ANNUAL(state) * libRate(state.level, state.n) / 20) * 20 / 4;
     document.getElementById('libAmt').textContent = '+ ' + fmt(libQ/3);
-    document.getElementById('libAmtSub').textContent = 'al mese, il 15% dei contenuti';
+    document.getElementById('libAmtSub').textContent = `al mese, il ${Math.round(libRate(state.level, state.n)*100)}% dei contenuti`;
     document.getElementById('qLibSub').textContent = `decine di clip pronte, + ${fmt(libQ/3)} al mese`;
     document.querySelectorAll('#qLevel button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === state.level));
     document.querySelectorAll('#qFreq button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.v === state.n));
